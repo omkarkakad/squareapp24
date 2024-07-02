@@ -1,0 +1,55 @@
+<html>
+	<head>
+	<title> Square finder app </title>
+	<style>
+	* {font-size:40px;}
+	body {background-color:lightblue;}
+	h1 {background-color:black;color:white;width:50%;border-radius:40px;}
+
+	</style>
+	</head>
+	<body>
+	<center>
+	<h1> Square Finder App </h1>
+	<form onSubmit="find()">
+	<input type="number" step="any" placeholder="Enter number" id="num"/>
+	<br><br>
+	<input type="submit" value="Find Square"/>
+	</form>
+	<h2 id="msg"/>
+	<script>
+		function find()
+		{
+			event.preventDefault();
+			let num=document.getElementById("num");
+			let msg=document.getElementById("msg");
+
+			if (num.value==="")
+			{
+				alert("u did not enter number");
+				msg.innerHTML="";
+				num.focus();
+				return;
+
+			}
+			let n=parseFloat(num.value);
+			let r=n*n;
+			let ans="Square = " + r.toFixed(2);
+			msg.innerHTML=ans;
+
+
+		}
+
+
+	</script>
+
+
+	</form>
+
+
+	</center>
+
+
+	</body>
+
+</html>
